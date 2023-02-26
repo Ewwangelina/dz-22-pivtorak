@@ -6,23 +6,35 @@ class Human {
         this.name = name;
         this.age = age;
     }
-
     printInfo() {
-        console.log(`Hi, my name: ${this.name} , my age: ${this.age}.`);
+        console.log(`Name driver: ${this.name} , age: ${this.age}.`);
     }
-
     setName(name) {
         this.name = name;
         return this;
     }
-
+    /**
+     * установка возраста
+     * @param age
+     * @returns {Human}
+     */
     setAge(age) {
         this.age = age;
+        return this;
+    }
+    get(){
         return this;
     }
 }
 
 class Auto {
+    /**
+     *
+     * @param brand
+     * @param model
+     * @param year
+     * @param licensePlate
+     */
     constructor(brand, model, year, licensePlate) {
         this.brand = brand;
         this.model = model;
@@ -52,7 +64,6 @@ class Auto {
         this.owner = owner;
         return this;
     }
-
     printInfo() {
         console.log(`------------------------------------------------------------`);
         console.log(`Brand: ${this.brand}`);
@@ -70,8 +81,14 @@ class Auto {
 }
 
 let humans = {
-    male: new Human().setName('Oleg').setAge(26),
-    female: new Human().setName('Marta').setAge(45)
+    male: new Human()
+        .setName('Oleg')
+        .setAge(26)
+        .get(),
+    female: new Human()
+        .setName('Marta')
+        .setAge(45)
+        .get()
 }
 
 let autos = {
@@ -87,3 +104,4 @@ let autos = {
 for(let i in autos) {
     autos[i].printInfo();
 }
+
