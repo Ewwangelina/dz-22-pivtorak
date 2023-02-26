@@ -83,7 +83,7 @@ let autos = {
         .setYear('2012')
         .setLicensePlate('SD785')
 }
-
+//auto printing aii objects
 for(let i in autos) {
     autos[i].printInfo();
 }
